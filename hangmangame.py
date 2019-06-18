@@ -5,7 +5,7 @@ from random import *
 player_score = 0
 computer_score = 0
 
-def hangedman(handman):
+def hangedman(hangman):
     graphic = [
     """
         +----------+
@@ -52,8 +52,8 @@ def hangedman(handman):
         |           |
         |           O
         |          -|-
-        |          /
-        |
+        |          (
+        |          
     ====================
     """
         ,
@@ -62,12 +62,12 @@ def hangedman(handman):
         |           |
         |           O
         |          -|-
-        |          / \
+        |          ( )
         |
     ====================
-    """
-    ]
-
+    """]
+    print(graphic[hangman])
+    return
 
 def start():
     print ("Let's play a game of Linux Hangman.")
@@ -97,7 +97,7 @@ def game():
                 letters_tried = letters_tried + letter
                 first_index = word.find(letter)
                 if first_index == -1:
-                    letters_wrong +=1:
+                    letters_wrong += 1
                     print("Sorry,", letter, "isn't what we're looking for.")
                 else:
                     print("Congratulations,", letter, "is correct.")
